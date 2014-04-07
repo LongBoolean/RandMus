@@ -14,12 +14,14 @@ int main()
 	for(i=0;i<num;i++)
 	{
 		a[i] = rand() % 50 + 1;
+		//since all output is piped into another program to make the sound, regular printf won't work
+		//instead we need to write to a file that can be read in another terminal instance
 		fprintf(f,"a[%d]: %d\n", i, a[i]);
 	}
 	fclose(f);
-//	system("gnome-terminal  \"cat lastSong.txt\"");
 	for(i=0;;i++)
-	{		
+	{	
+		//this is where all the magic happens
 		putchar(((i*(i>>a[0]|i>>a[1])&a[2]&i>>a[3]))^(i&i>>a[4]|i>>a[5]));
 	} 
 	return 0;
